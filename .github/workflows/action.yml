@@ -9,6 +9,10 @@ on:
     branches:
       - '*'
 
+# Add permissions block to grant write access for tags
+permissions:
+  contents: write
+
 jobs:
   cache-modules:
     runs-on: ubuntu-latest
