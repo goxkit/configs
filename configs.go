@@ -14,7 +14,7 @@ import "go.uber.org/zap"
 // maintain a single reference to all necessary configurations.
 type Configs struct {
 	// Logger provides access to the application's configured logger
-	Logger *zap.Logger
+	Logger *zap.SugaredLogger
 
 	// Custom holds any application-specific configuration values
 	// that don't fit into the predefined categories
