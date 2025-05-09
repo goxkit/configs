@@ -92,7 +92,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DEFAULT_BUMP: patch
           WITH_V: true
-          PRERELEASE: true
 
       - name: Minor release
         if: ${{ github.ref == 'refs/heads/main' }}
@@ -116,27 +115,3 @@ jobs:
         run: |
           echo "minor_tag=${{ steps.minor.outputs.new_tag }}" >> $GITHUB_OUTPUT
           echo "Build version is ${{ steps.minor.outputs.new_tag }}"
-
-
-  release_tags:
-    if: ${{ github.ref == 'refs/heads/develop' || github.ref == 'refs/heads/main' }}
-    needs: next_tag
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-
-      - name: Release Patch Version
-        if: ${{ github.ref == 'refs/heads/develop' }}
-        run: |
-          git tag ${{ needs.next_tag.outputs.patch_tag }}
-          git push origin ${{ needs.next_tag.outputs.patch_tag }}
-
-      - name: Release Minor Version
-        if: ${{ github.ref == 'refs/heads/main' }}
-        run: |
-          git tag ${{ needs.next_tag.outputs.minor_tag }}
-          git push origin ${{ needs.next_tag.outputs.minor_tag }}

@@ -1,5 +1,20 @@
 # Gokit Configs
 
+<p align="center">
+  <a href="https://github.com/goxkit/configs/blob/main/LICENSE">
+    <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License">
+  </a>
+  <a href="https://pkg.go.dev/github.com/goxkit/configs">
+    <img src="https://godoc.org/github.com/goxkit/configs?status.svg" alt="Go Doc">
+  </a>
+  <a href="https://goreportcard.com/report/github.com/goxkit/configs">
+    <img src="https://goreportcard.com/badge/github.com/goxkit/configs" alt="Go Report Card">
+  </a>
+  <a href="https://github.com/goxkit/configs/actions">
+    <img src="https://github.com/goxkit/configs/actions/workflows/action.yml/badge.svg?branch=main" alt="Build Status">
+  </a>
+</p>
+
 The `configs` package provides a comprehensive configuration framework for GoKit applications. It offers a structured approach to manage different types of configurations like HTTP, database connections, message brokers, authentication, and more.
 
 ## Overview
