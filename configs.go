@@ -24,12 +24,10 @@ type Configs struct {
 	AppConfigs *AppConfigs
 	// HTTPConfigs provides configuration for HTTP servers/clients
 	HTTPConfigs *HTTPConfigs
-	// MetricsConfigs contains settings for metrics collection and reporting
-	MetricsConfigs *MetricsConfigs
-	// TracingConfigs holds distributed tracing configuration
-	TracingConfigs *TracingConfigs
-	// SQLConfigs contains database connection and pool settings
-	SQLConfigs *SQLConfigs
+	//
+	OTLPConfigs *OTLPConfigs
+	// PostgresConfigs contains database connection and pool settings
+	PostgresConfigs *PostgresConfigs
 	// IdentityConfigs provides authentication and identity management settings
 	IdentityConfigs *IdentityConfigs
 	// MQTTConfigs holds MQTT message broker settings

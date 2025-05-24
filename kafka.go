@@ -11,12 +11,22 @@ type KafkaConfigs struct {
 	Host string
 	// Port defines the network port on which the Kafka broker is listening
 	Port int
+	//
+	Timeout int
 	// SecurityProtocol defines the protocol used to communicate with brokers
 	// (e.g., "PLAINTEXT", "SSL", "SASL_PLAINTEXT", "SASL_SSL")
 	SecurityProtocol string
 	// SASLMechanisms specifies the SASL mechanism to use for authentication
 	// (e.g., "PLAIN", "SCRAM-SHA-256", "SCRAM-SHA-512")
 	SASLMechanisms string
+	//
+	CertificatePath string
+	//
+	TrustStorePath string
+	//
+	KeyStorePath string
+	//
+	EndpointIdentificationAlgorithm string
 	// User specifies the username for Kafka broker authentication when using SASL
 	User string
 	// Password contains the authentication credential for the Kafka user
