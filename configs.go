@@ -32,8 +32,6 @@ type Configs struct {
 	SQLConfigs *SQLConfigs
 	// IdentityConfigs provides authentication and identity management settings
 	IdentityConfigs *IdentityConfigs
-	// Auth0Configs contains Auth0-specific configuration parameters
-	Auth0Configs *Auth0Configs
 	// MQTTConfigs holds MQTT message broker settings
 	MQTTConfigs *MQTTConfigs
 	// RabbitMQConfigs provides RabbitMQ message broker configuration

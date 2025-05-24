@@ -9,14 +9,12 @@ package configs
 // such as environment, logging settings, and secret management options.
 type AppConfigs struct {
 	// GoEnv specifies the environment in which the application runs (e.g., development, production)
-	GoEnv Environment
+	Env Environment
 	// AppName holds the name of the application for identification in logs and monitoring
 	AppName string
 
 	// LogLevel determines the verbosity and severity threshold of application logs
 	LogLevel LogLevel
-	// LogPath specifies the file path where logs should be written (if file logging is enabled)
-	LogPath string
 
 	// UseSecretManager indicates whether the application should retrieve secrets from a secure secret manager
 	UseSecretManager bool
