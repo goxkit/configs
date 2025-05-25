@@ -15,7 +15,6 @@ import (
 // various string representations of environments into their corresponding Environment values.
 // It tests case sensitivity handling and different naming conventions for each environment.
 func TestNewEnvironment(t *testing.T) {
-
 	assert.Equal(t, NewEnvironment("development"), DevelopmentEnv)
 	assert.Equal(t, NewEnvironment("DEVELOPMENT"), DevelopmentEnv)
 	assert.Equal(t, NewEnvironment("dev"), DevelopmentEnv)

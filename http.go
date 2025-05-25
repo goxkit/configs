@@ -7,10 +7,9 @@ package configs
 // HTTPConfigs provides configuration settings for HTTP servers and clients.
 // It contains parameters related to network binding, addressing, and diagnostic features.
 type HTTPConfigs struct {
-	// Addr combines the Host and Port (typically in the format "host:port")
-	// for direct use in network binding operations
-	Addr string
+	//ENV: HTTP_ENABLE_PROFILING
+	//
 	// EnableProfiling controls whether Go's pprof profiling endpoints should be exposed
 	// for runtime debugging and performance analysis
-	EnableProfiling bool
+	EnableProfiling bool `mapstructure:"HTTP_ENABLE_PROFILING" envconfig:"HTTP_ENABLE_PROFILING"`
 }
