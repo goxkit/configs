@@ -14,7 +14,7 @@ import "go.uber.org/zap"
 // maintain a single reference to all necessary configurations.
 type Configs struct {
 	// Logger provides access to the application's configured logger
-	Logger *zap.SugaredLogger
+	Logger *zap.Logger
 
 	// Custom holds any application-specific configuration values
 	// that don't fit into the predefined categories
@@ -24,16 +24,12 @@ type Configs struct {
 	AppConfigs *AppConfigs
 	// HTTPConfigs provides configuration for HTTP servers/clients
 	HTTPConfigs *HTTPConfigs
-	// MetricsConfigs contains settings for metrics collection and reporting
-	MetricsConfigs *MetricsConfigs
-	// TracingConfigs holds distributed tracing configuration
-	TracingConfigs *TracingConfigs
-	// SQLConfigs contains database connection and pool settings
-	SQLConfigs *SQLConfigs
+	//
+	OTLPConfigs *OTLPConfigs
+	// PostgresConfigs contains database connection and pool settings
+	PostgresConfigs *PostgresConfigs
 	// IdentityConfigs provides authentication and identity management settings
 	IdentityConfigs *IdentityConfigs
-	// Auth0Configs contains Auth0-specific configuration parameters
-	Auth0Configs *Auth0Configs
 	// MQTTConfigs holds MQTT message broker settings
 	MQTTConfigs *MQTTConfigs
 	// RabbitMQConfigs provides RabbitMQ message broker configuration

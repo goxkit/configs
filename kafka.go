@@ -7,18 +7,50 @@ package configs
 // KafkaConfigs defines configuration parameters for Apache Kafka connections.
 // It provides settings for connection, authentication, and security protocols.
 type KafkaConfigs struct {
+	//ENV: KAFKA_HOST
+	//
 	// Host specifies the Kafka broker hostname or IP address
-	Host string
+	Host string `mapstructure:"KAFKA_HOST" envconfig:"KAFKA_HOST"`
+	//ENV: KAFKA_PORT
+	//
 	// Port defines the network port on which the Kafka broker is listening
-	Port int
+	Port int `mapstructure:"KAFKA_PORT" envconfig:"KAFKA_PORT"`
+	//ENV: KAFKA_TIMEOUT
+	//
+	// Timeout specifies the maximum time to wait for a response from the Kafka broker
+	Timeout int `mapstructure:"KAFKA_TIMEOUT" envconfig:"KAFKA_TIMEOUT"`
+	//ENV: KAFKA_SECURITY_PROTOCOL
+	//
 	// SecurityProtocol defines the protocol used to communicate with brokers
 	// (e.g., "PLAINTEXT", "SSL", "SASL_PLAINTEXT", "SASL_SSL")
-	SecurityProtocol string
+	SecurityProtocol string `mapstructure:"KAFKA_SECURITY_PROTOCOL" envconfig:"KAFKA_SECURITY_PROTOCOL"`
+	//ENV: KAFKA_SASL_MECHANISMS
+	//
 	// SASLMechanisms specifies the SASL mechanism to use for authentication
 	// (e.g., "PLAIN", "SCRAM-SHA-256", "SCRAM-SHA-512")
-	SASLMechanisms string
+	SASLMechanisms string `mapstructure:"KAFKA_SASL_MECHANISMS" envconfig:"KAFKA_SASL_MECHANISMS"`
+	//ENV: KAFKA_CERTIFICATE_PATH
+	//
+	// CertificatePath specifies the path to the SSL certificate file for secure connections
+	CertificatePath string `mapstructure:"KAFKA_CERTIFICATE_PATH" envconfig:"KAFKA_CERTIFICATE_PATH"`
+	//ENV: KAFKA_TRUSTSTORE_PATH
+	//
+	// TrustStorePath specifies the path to the SSL truststore file for secure connections
+	TrustStorePath string `mapstructure:"KAFKA_TRUSTSTORE_PATH" envconfig:"KAFKA_TRUSTSTORE_PATH"`
+	//ENV: KAFKA_KEYSTORE_PATH
+	//
+	// KeyStorePath specifies the path to the SSL keystore file for secure connections
+	KeyStorePath string `mapstructure:"KAFKA_KEYSTORE_PATH" envconfig:"KAFKA_KEYSTORE_PATH"`
+	//ENV: KAFKA_ENDPOINT_IDENTIFICATION_ALGORITHM
+	//
+	// EndpointIdentificationAlgorithm specifies the algorithm used for hostname verification
+	EndpointIdentificationAlgorithm string `mapstructure:"KAFKA_ENDPOINT_IDENTIFICATION_ALGORITHM" envconfig:"KAFKA_ENDPOINT_IDENTIFICATION_ALGORITHM"`
+	//ENV: KAFKA_USER
+	//
 	// User specifies the username for Kafka broker authentication when using SASL
-	User string
+	User string `mapstructure:"KAFKA_USER" envconfig:"KAFKA_USER"`
+	//ENV: KAFKA_PASSWORD
+	//
 	// Password contains the authentication credential for the Kafka user
-	Password string
+	Password string `mapstructure:"KAFKA_PASSWORD" envconfig:"KAFKA_PASSWORD"`
 }
