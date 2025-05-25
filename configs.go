@@ -41,4 +41,11 @@ type Configs struct {
 	AWSConfigs *AWSConfigs
 	// DynamoDBConfigs provides Amazon DynamoDB specific settings
 	DynamoDBConfigs *DynamoDBConfigs
+
+	//Otel Logger Provider
+	LoggerProvider any
+	//Otel Metrics Provider
+	MetricsProvider any
+	//Otel Tracing Provider
+	TracerProvider any
 }
