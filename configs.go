@@ -25,7 +25,7 @@ type Configs struct {
 	AppConfigs *AppConfigs
 	// HTTPConfigs provides configuration for HTTP servers/clients
 	HTTPConfigs *HTTPConfigs
-	//
+	// OTLPConfigs contains OpenTelemetry settings for logging, tracing, and metrics
 	OTLPConfigs *OTLPConfigs
 	// PostgresConfigs contains database connection and pool settings
 	PostgresConfigs *PostgresConfigs
