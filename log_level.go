@@ -6,19 +6,19 @@ package configs
 
 // LogLevel defines the severity levels for application logging.
 // It is used to filter log messages based on their importance.
-type LogLevel int8
+type LogLevel string
 
 const (
 	// DEBUG represents detailed information, typically valuable only for diagnosing problems
-	DEBUG LogLevel = 0
+	DEBUG LogLevel = "debug"
 	// INFO represents general information about system operation
-	INFO LogLevel = 1
+	INFO LogLevel = "info"
 	// WARN represents potentially harmful situations that might need attention
-	WARN LogLevel = 2
+	WARN LogLevel = "warn"
 	// ERROR represents error events that might still allow the application to continue running
-	ERROR LogLevel = 3
+	ERROR LogLevel = "error"
 	// PANIC represents severe error events that will likely lead the application to abort
-	PANIC LogLevel = 4
+	PANIC LogLevel = "panic"
 )
 
 // NewLogLevel converts a string log level name to the corresponding LogLevel enum value.

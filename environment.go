@@ -4,23 +4,25 @@
 
 package configs
 
+import "fmt"
+
 // Environment represents the application execution environment as a typed enum.
 // It provides type safety when dealing with different deployment environments.
-type Environment int8
+type Environment string
 
 const (
 	// UnknownEnv represents an unspecified or invalid environment
-	UnknownEnv Environment = 0
+	UnknownEnv Environment = "unknown"
 	// LocalEnv represents a local development environment
-	LocalEnv Environment = 1
+	LocalEnv Environment = "local"
 	// DevelopmentEnv represents a shared development environment
-	DevelopmentEnv Environment = 2
+	DevelopmentEnv Environment = "development"
 	// StagingEnv represents a pre-production environment for testing
-	StagingEnv Environment = 3
+	StagingEnv Environment = "staging"
 	// QaEnv represents a quality assurance testing environment
-	QaEnv Environment = 4
+	QaEnv Environment = "qa"
 	// ProductionEnv represents the live production environment
-	ProductionEnv Environment = 5
+	ProductionEnv Environment = "production"
 )
 
 var (
@@ -94,4 +96,22 @@ func (e Environment) ToString() string {
 	default:
 		return "unknown"
 	}
+}
+
+func (e Environment) String() string {
+	return e.ToString()
+}
+
+func (e *Environment) Unmarshal(v interface{}) error {
+	switch v := v.(type) {
+	case string:
+		*e = NewEnvironment(v)
+		return nil
+	default:
+		return fmt.Errorf("unsupported type %T for Environment", v)
+	}
+}
+
+func (e Environment) Marshal() (interface{}, error) {
+	return e.ToString(), nil
 }
