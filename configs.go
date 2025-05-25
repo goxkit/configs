@@ -7,7 +7,10 @@
 // database connections, message brokers, authentication, and more.
 package configs
 
-import "go.uber.org/zap"
+import (
+	"github.com/spf13/viper"
+	"go.uber.org/zap"
+)
 
 // Configs is the central configuration container that aggregates all available
 // configuration components in the GoKit framework. It allows applications to
@@ -15,10 +18,8 @@ import "go.uber.org/zap"
 type Configs struct {
 	// Logger provides access to the application's configured logger
 	Logger *zap.Logger
-
-	// Custom holds any application-specific configuration values
-	// that don't fit into the predefined categories
-	Custom map[string]string
+	// Viper is the configuration management library used to load and manage
+	Custom *viper.Viper
 
 	// AppConfigs contains basic application configurations like environment and name
 	AppConfigs *AppConfigs
