@@ -40,3 +40,14 @@ type IdentityConfigs struct {
 	// Signature contains cryptographic material used to verify token signatures
 	Signature string `mapstructure:"IDENTITY_SIGNATURE" envconfig:"IDENTITY_SIGNATURE"`
 }
+
+const (
+	IdentityClientIDEnvKey               = "IDENTITY_CLIENT_ID"                // OAuth client ID
+	IdentityClientSecretEnvKey           = "IDENTITY_CLIENT_SECRET"            // OAuth client secret
+	IdentityGrantTypeEnvKey              = "IDENTITY_GRANT_TYPE"               // OAuth grant type
+	IdentityMillisecondsBetweenJwkEnvKey = "IDENTITY_MILLISECONDS_BETWEEN_JWK" // Interval for refreshing JWK
+	IdentityDomainEnvKey                 = "IDENTITY_DOMAIN"                   // Identity provider domain
+	IdentityAudienceEnvKey               = "IDENTITY_AUDIENCE"                 // JWT audience
+	IdentityIssuerEnvKey                 = "IDENTITY_ISSUER"                   // JWT issuer
+	IdentitySignatureEnvKey              = "IDENTITY_SIGNATURE"                // JWT signature algorithm
+)

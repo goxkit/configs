@@ -13,3 +13,7 @@ type HTTPConfigs struct {
 	// for runtime debugging and performance analysis
 	EnableProfiling bool `mapstructure:"HTTP_ENABLE_PROFILING" envconfig:"HTTP_ENABLE_PROFILING"`
 }
+
+const (
+	HTTPEnableProfilingEnvKey = "HTTP_ENABLE_PROFILING" // Whether to enable pprof profiling endpoints
+)

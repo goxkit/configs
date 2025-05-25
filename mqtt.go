@@ -40,3 +40,11 @@ type MQTTConfigs struct {
 	// PrivateKeyPath is the file path to the private key associated with the client certificate
 	PrivateKeyPath string `mapstructure:"MQTT_PRIVATE_KEY_PATH" envconfig:"MQTT_PRIVATE_KEY_PATH"`
 }
+
+const (
+	MQTTProtocolEnvKey = "MQTT_PROTOCOL" // MQTT protocol (mqtt, mqtts)
+	MQTTHostEnvKey     = "MQTT_HOST"     // MQTT broker host
+	MQTTPortEnvKey     = "MQTT_PORT"     // MQTT broker port
+	MQTTUserEnvKey     = "MQTT_USER"     // MQTT username
+	MQTTPasswordEnvKey = "MQTT_PASSWORD" // MQTT password
+)

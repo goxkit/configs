@@ -32,3 +32,12 @@ type RabbitMQConfigs struct {
 	// VHost specifies the virtual host to use on the RabbitMQ server
 	VHost string `mapstructure:"RABBITMQ_VHOST" envconfig:"RABBITMQ_VHOST"`
 }
+
+const (
+	RabbitSchemaEnvKey   = "RABBIT_SCHEMA"   // RabbitMQ connection schema (amqp, amqps)
+	RabbitHostEnvKey     = "RABBIT_HOST"     // RabbitMQ host
+	RabbitPortEnvKey     = "RABBIT_PORT"     // RabbitMQ port
+	RabbitUserEnvKey     = "RABBIT_USER"     // RabbitMQ username
+	RabbitPasswordEnvKey = "RABBIT_PASSWORD" // RabbitMQ password
+	RabbitVHostEnvKey    = "RABBIT_VHOST"    // RabbitMQ virtual host
+)
