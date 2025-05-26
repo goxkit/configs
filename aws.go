@@ -7,6 +7,10 @@ package configs
 // AWSConfigs defines authentication and credential settings for AWS services.
 // It contains the necessary parameters to authenticate with AWS APIs.
 type AWSConfigs struct {
+	//ENV: AWS_REGION
+	//
+	// Region specifies the AWS region where the service is located
+	Region string `mapstructure:"AWS_REGION" envconfig:"AWS_REGION"`
 	//ENV: AWS_ACCESS_KEY_ID
 	//
 	// AccessKeyID is the AWS access key part of the credential pair
@@ -36,11 +40,4 @@ type DynamoDBConfigs struct {
 	//
 	// Table specifies the default DynamoDB table name to use
 	Table string `mapstructure:"DYNAMODB_TABLE" envconfig:"DYNAMODB_TABLE"`
-}
-
-// AWSSecretManagerConfigs contains settings for AWS Secret Manager service.
-// It provides configuration needed to retrieve secrets from AWS Secret Manager.
-type AWSSecretManagerConfigs struct {
-	// Region defines the AWS region where the Secret Manager service is located
-	Region string
 }

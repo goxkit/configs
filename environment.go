@@ -79,6 +79,23 @@ func NewEnvironment(env string) Environment {
 	}
 }
 
+func (e Environment) EnvFile() string {
+	switch e {
+	case LocalEnv:
+		return ".env.local"
+	case DevelopmentEnv:
+		return ".env.dev"
+	case ProductionEnv:
+		return ".env.prod"
+	case StagingEnv:
+		return ".env.stg"
+	case QaEnv:
+		return ".env.qa"
+	default:
+		return ".env"
+	}
+}
+
 // ToString returns the canonical string representation of the Environment.
 // This provides consistent environment naming when logging or presenting the environment.
 func (e Environment) ToString() string {
@@ -98,7 +115,7 @@ func (e Environment) ToString() string {
 	}
 }
 
-func (e Environment) String() string {
+func (e *Environment) String() string {
 	return e.ToString()
 }
 
