@@ -3,6 +3,11 @@ package configs
 import "time"
 
 type OTLPConfigs struct {
+	//ENV: OTLP_ENABLED
+	//
+	// Enabled indicates whether OTLP exporter is enabled, default is false
+	Enabled bool `mapstructure:"OTLP_ENABLED" envconfig:"OTLP_ENABLED"`
+
 	//ENV: OTLP_EXPORTER_TYPE
 	//
 	// ExporterType specifies the type of OTLP exporter to use (e.g., "otlp", "otlphttp")
