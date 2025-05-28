@@ -10,6 +10,7 @@ package configs
 import (
 	"github.com/spf13/viper"
 	"go.uber.org/zap"
+	"google.golang.org/grpc"
 )
 
 // Configs is the central configuration container that aggregates all available
@@ -42,6 +43,8 @@ type Configs struct {
 	// DynamoDBConfigs provides Amazon DynamoDB specific settings
 	DynamoDBConfigs *DynamoDBConfigs
 
+	//Otel gRPC Connection
+	OtelExporterConn *grpc.ClientConn
 	//Otel Logger Provider
 	LoggerProvider any
 	//Otel Metrics Provider
