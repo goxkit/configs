@@ -43,8 +43,8 @@ type Configs struct {
 	// DynamoDBConfigs provides Amazon DynamoDB specific settings
 	DynamoDBConfigs *DynamoDBConfigs
 
-	//Otel gRPC Connection
-	OtelExporterConn *grpc.ClientConn
+	//OTLP gRPC Connection
+	OTLPExporterConn *grpc.ClientConn
 	//Otel Logger Provider
 	LoggerProvider any
 	//Otel Metrics Provider

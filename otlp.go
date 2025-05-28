@@ -19,7 +19,7 @@ type OTLPConfigs struct {
 	//ENV: OTLP_ENDPOINT
 	//
 	// Endpoint specifies the endpoint URL for the OTLP exporter
-	Endpoint string `mapstructure:"OTLP_ENDPOINT" envconfig:"OTLP_ENDPOINT"`
+	Endpoint string `mapstructure:"OTLP_ENDPOINT" envconfig:"OTLP_ENDPOINT" default:"localhost:4317"`
 	//ENV: OTLP_ACCESS_KEY
 	//
 	// AccessKey is the access key for authentication with the OTLP endpoint
@@ -27,19 +27,24 @@ type OTLPConfigs struct {
 	//ENV: OTLP_EXPORTER_TIMEOUT
 	//
 	// ExporterTimeout specifies the timeout duration for the OTLP exporter
-	ExporterTimeout time.Duration `mapstructure:"OTLP_EXPORTER_TIMEOUT" envconfig:"OTLP_EXPORTER_TIMEOUT"`
+	ExporterTimeout time.Duration `mapstructure:"OTLP_EXPORTER_TIMEOUT" envconfig:"OTLP_EXPORTER_TIMEOUT" default:"10s"`
 	//ENV: OTLP_EXPORTER_INTERVAL
 	//
 	// ExporterInterval specifies the interval duration for the OTLP exporter
-	ExporterInterval time.Duration `mapstructure:"OTLP_EXPORTER_INTERVAL" envconfig:"OTLP_EXPORTER_INTERVAL"`
+	// Default: 10s
+	ExporterInterval time.Duration `mapstructure:"OTLP_EXPORTER_INTERVAL" envconfig:"OTLP_EXPORTER_INTERVAL" default:"30s"`
+	//ENV: OTLP_EXPORTER_RECONNECTION_PERIOD
+	//
+	// ExporterReconnectionPeriod specifies the period for reconnection attempts
+	ExporterReconnectionPeriod time.Duration `mapstructure:"OTLP_EXPORTER_RECONNECTION_PERIOD" envconfig:"OTLP_EXPORTER_RECONNECTION_PERIOD" default:"30s"`
 	//ENV: OTLP_METRICS_EXPORTER_RATE_BASE
 	//
 	// MetricsExporterRateBase specifies the rate base for metrics exporter
-	MetricsExporterRateBase float64 `mapstructure:"OTLP_METRICS_EXPORTER_RATE_BASE" envconfig:"OTLP_METRICS_EXPORTER_RATE_BASE"`
+	MetricsExporterRateBase float64 `mapstructure:"OTLP_METRICS_EXPORTER_RATE_BASE" envconfig:"OTLP_METRICS_EXPORTER_RATE_BASE" default:"0.8"`
 	//ENV: OTLP_TRACING_EXPORTER_RATE_BASE
 	//
 	// TracingExporterRateBase specifies the rate base for tracing exporter
-	TracingExporterRateBase float64 `mapstructure:"OTLP_TRACING_EXPORTER_RATE_BASE" envconfig:"OTLP_TRACING_EXPORTER_RATE_BASE"`
+	TracingExporterRateBase float64 `mapstructure:"OTLP_TRACING_EXPORTER_RATE_BASE" envconfig:"OTLP_TRACING_EXPORTER_RATE_BASE" default:"0.8"`
 	// ENV: OTLP_METRICS_ENABLED
 	//
 	// MetricsEnabled indicates whether metrics collection is enabled
