@@ -10,25 +10,25 @@ type KafkaConfigs struct {
 	//ENV: KAFKA_HOST
 	//
 	// Host specifies the Kafka broker hostname or IP address
-	Host string `mapstructure:"KAFKA_HOST" envconfig:"KAFKA_HOST"`
+	Host string `mapstructure:"KAFKA_HOST" envconfig:"KAFKA_HOST" default:"localhost"`
 	//ENV: KAFKA_PORT
 	//
 	// Port defines the network port on which the Kafka broker is listening
-	Port int `mapstructure:"KAFKA_PORT" envconfig:"KAFKA_PORT"`
+	Port int `mapstructure:"KAFKA_PORT" envconfig:"KAFKA_PORT" default:"9092"`
 	//ENV: KAFKA_TIMEOUT
 	//
 	// Timeout specifies the maximum time to wait for a response from the Kafka broker
-	Timeout int `mapstructure:"KAFKA_TIMEOUT" envconfig:"KAFKA_TIMEOUT"`
+	Timeout int `mapstructure:"KAFKA_TIMEOUT" envconfig:"KAFKA_TIMEOUT" default:"30s"`
 	//ENV: KAFKA_SECURITY_PROTOCOL
 	//
 	// SecurityProtocol defines the protocol used to communicate with brokers
 	// (e.g., "PLAINTEXT", "SSL", "SASL_PLAINTEXT", "SASL_SSL")
-	SecurityProtocol string `mapstructure:"KAFKA_SECURITY_PROTOCOL" envconfig:"KAFKA_SECURITY_PROTOCOL"`
+	SecurityProtocol string `mapstructure:"KAFKA_SECURITY_PROTOCOL" envconfig:"KAFKA_SECURITY_PROTOCOL" default:"SASL_PLAINTEXT"`
 	//ENV: KAFKA_SASL_MECHANISMS
 	//
 	// SASLMechanisms specifies the SASL mechanism to use for authentication
 	// (e.g., "PLAIN", "SCRAM-SHA-256", "SCRAM-SHA-512")
-	SASLMechanisms string `mapstructure:"KAFKA_SASL_MECHANISMS" envconfig:"KAFKA_SASL_MECHANISMS"`
+	SASLMechanisms string `mapstructure:"KAFKA_SASL_MECHANISMS" envconfig:"KAFKA_SASL_MECHANISMS" default:"PLAIN"`
 	//ENV: KAFKA_CERTIFICATE_PATH
 	//
 	// CertificatePath specifies the path to the SSL certificate file for secure connections
@@ -48,9 +48,9 @@ type KafkaConfigs struct {
 	//ENV: KAFKA_USER
 	//
 	// User specifies the username for Kafka broker authentication when using SASL
-	User string `mapstructure:"KAFKA_USER" envconfig:"KAFKA_USER"`
+	User string `mapstructure:"KAFKA_USER" envconfig:"KAFKA_USER" default:"guest"`
 	//ENV: KAFKA_PASSWORD
 	//
 	// Password contains the authentication credential for the Kafka user
-	Password string `mapstructure:"KAFKA_PASSWORD" envconfig:"KAFKA_PASSWORD"`
+	Password string `mapstructure:"KAFKA_PASSWORD" envconfig:"KAFKA_PASSWORD" default:"guest"`
 }

@@ -10,27 +10,27 @@ type RabbitMQConfigs struct {
 	//ENV: RABBITMQ_SCHEMA
 	//
 	// Schema defines the connection protocol (typically "amqp" or "amqps" for TLS)
-	Schema string `mapstructure:"RABBITMQ_SCHEMA" envconfig:"RABBITMQ_SCHEMA"`
+	Schema string `mapstructure:"RABBITMQ_SCHEMA" envconfig:"RABBITMQ_SCHEMA" default:"amqp"`
 	//ENV: RABBITMQ_HOST
 	//
 	// Host specifies the RabbitMQ server hostname or IP address
-	Host string `mapstructure:"RABBITMQ_HOST" envconfig:"RABBITMQ_HOST"`
+	Host string `mapstructure:"RABBITMQ_HOST" envconfig:"RABBITMQ_HOST" default:"localhost"`
 	//ENV: RABBITMQ_PORT
 	//
 	// Port defines the network port on which the RabbitMQ server is listening
-	Port string `mapstructure:"RABBITMQ_PORT" envconfig:"RABBITMQ_PORT"`
+	Port string `mapstructure:"RABBITMQ_PORT" envconfig:"RABBITMQ_PORT" default:"5672"`
 	//ENV: RABBITMQ_USERNAME
 	//
 	// User specifies the username for RabbitMQ server authentication
-	User string `mapstructure:"RABBITMQ_USERNAME" envconfig:"RABBITMQ_USERNAME"`
+	User string `mapstructure:"RABBITMQ_USERNAME" envconfig:"RABBITMQ_USERNAME" default:"guest"`
 	//ENV: RABBITMQ_PASSWORD
 	//
 	// Password contains the authentication credential for the RabbitMQ user
-	Password string `mapstructure:"RABBITMQ_PASSWORD" envconfig:"RABBITMQ_PASSWORD"`
+	Password string `mapstructure:"RABBITMQ_PASSWORD" envconfig:"RABBITMQ_PASSWORD" default:"guest"`
 	//ENV: RABBITMQ_VHOST
 	//
 	// VHost specifies the virtual host to use on the RabbitMQ server
-	VHost string `mapstructure:"RABBITMQ_VHOST" envconfig:"RABBITMQ_VHOST"`
+	VHost string `mapstructure:"RABBITMQ_VHOST" envconfig:"RABBITMQ_VHOST" default:"/"`
 }
 
 const (

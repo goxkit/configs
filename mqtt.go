@@ -10,23 +10,23 @@ type MQTTConfigs struct {
 	//ENV: MQTT_HOST
 	//
 	// Host specifies the MQTT broker hostname or IP address
-	Host string `mapstructure:"MQTT_HOST" envconfig:"MQTT_HOST"`
+	Host string `mapstructure:"MQTT_HOST" envconfig:"MQTT_HOST" default:"localhost"`
 	//ENV: MQTT_PORT
 	//
 	// Port defines the network port on which the MQTT broker is listening
-	Port int `mapstructure:"MQTT_PORT" envconfig:"MQTT_PORT"`
+	Port int `mapstructure:"MQTT_PORT" envconfig:"MQTT_PORT" default:"1883"`
 	//ENV: MQTT_USER
 	//
 	// User specifies the username for MQTT broker authentication
-	User string `mapstructure:"MQTT_USER" envconfig:"MQTT_USER"`
+	User string `mapstructure:"MQTT_USER" envconfig:"MQTT_USER" default:"guest"`
 	//ENV: MQTT_PASSWORD
 	//
 	// Password contains the authentication credential for the MQTT user
-	Password string `mapstructure:"MQTT_PASSWORD" envconfig:"MQTT_PASSWORD"`
+	Password string `mapstructure:"MQTT_PASSWORD" envconfig:"MQTT_PASSWORD" default:"guest"`
 	//ENV: MQTT_PROTOCOL
 	//
 	// Protocol specifies the MQTT protocol version to use (e.g., "mqtt", "mqtts")
-	Protocol string `mapstructure:"MQTT_PROTOCOL" envconfig:"MQTT_PROTOCOL"`
+	Protocol string `mapstructure:"MQTT_PROTOCOL" envconfig:"MQTT_PROTOCOL" default:"mqtt"`
 	//ENV: MQTT_ROOT_CA_PATH
 	//
 	// RootCaPath is the file path to the root CA certificate for TLS verification

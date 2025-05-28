@@ -11,23 +11,23 @@ type AppConfigs struct {
 	//ENV: GO_ENV
 	//
 	// GoEnv specifies the environment in which the application runs (e.g., development, production)
-	Environment Environment `mapstructure:"GO_ENV" envconfig:"GO_ENV"`
+	Environment Environment `mapstructure:"GO_ENV" envconfig:"GO_ENV" default:"local"`
 	//ENV: APP_NAME
 	//
 	//Name holds the name of the application for identification in logs and monitoring
-	Name string `mapstructure:"APP_NAME" envconfig:"APP_NAME"`
+	Name string `mapstructure:"APP_NAME" envconfig:"APP_NAME" default:"goxkit-app-name"`
 	//ENV: APP_NAME
 	//
 	//Namespace is used to categorize application resources and configurations
-	Namespace string `mapstructure:"NAMESPACE" envconfig:"NAMESPACE"`
+	Namespace string `mapstructure:"NAMESPACE" envconfig:"NAMESPACE" default:"local"`
 	//ENV: NAMESPACE
 	//
 	//LogLevel determines the verbosity and severity threshold of application logs
-	LogLevel LogLevel `mapstructure:"LOG_LEVEL" envconfig:"LOG_LEVEL"`
+	LogLevel LogLevel `mapstructure:"LOG_LEVEL" envconfig:"LOG_LEVEL" default:"info"`
 	//ENV: LOG_LEVEL
 	//
 	//UseSecretManager indicates whether the application should retrieve secrets from a secure secret manager
-	SecretManagerKind SecretManagerKind `mapstructure:"SECRET_MANAGER_KIND" envconfig:"SECRET_MANAGER_KIND"`
+	SecretManagerKind SecretManagerKind `mapstructure:"SECRET_MANAGER_KIND" envconfig:"SECRET_MANAGER_KIND" default:"none"`
 	//ENV: APP_SECRET_KEY
 	//
 	//SecretKey identifies the key/path used to fetch secrets from the secret manager
@@ -35,11 +35,11 @@ type AppConfigs struct {
 	//ENV: APP_HOST
 	//
 	//Host specifies the hostname or IP address on which the application listens for incoming requests
-	Host string `mapstructure:"APP_HOST" envconfig:"APP_HOST"`
+	Host string `mapstructure:"APP_HOST" envconfig:"APP_HOST" default:"0.0.0.0"`
 	//ENV: APP_PORT
 	//
 	//Port defines the network port on which the application listens for incoming requests
-	Port int `mapstructure:"APP_PORT" envconfig:"APP_PORT"`
+	Port int `mapstructure:"APP_PORT" envconfig:"APP_PORT" default:"4555"`
 }
 
 const (
