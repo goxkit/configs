@@ -11,19 +11,22 @@ type OTLPConfigs struct {
 	//
 	// Enabled indicates whether OTLP exporter is enabled, default is false
 	Enabled bool `mapstructure:"OTLP_ENABLED" envconfig:"OTLP_ENABLED"`
-
-	//ENV: OTLP_EXPORTER_TYPE
-	//
-	// ExporterType specifies the type of OTLP exporter to use (e.g., "otlp", "otlphttp")
-	ExporterType string `mapstructure:"OTLP_EXPORTER_TYPE" envconfig:"OTLP_EXPORTER_TYPE"`
 	//ENV: OTLP_ENDPOINT
 	//
 	// Endpoint specifies the endpoint URL for the OTLP exporter
 	Endpoint string `mapstructure:"OTLP_ENDPOINT" envconfig:"OTLP_ENDPOINT" default:"localhost:4317"`
-	//ENV: OTLP_ACCESS_KEY
+	//ENV: OTLP_EXPORTER_HEADERS
 	//
-	// AccessKey is the access key for authentication with the OTLP endpoint
-	AccessKey string `mapstructure:"OTLP_ACCESS_KEY" envconfig:"OTLP_ACCESS_KEY"`
+	//ExporterHeaders specifies the headers to be sent with the OTLP exporter
+	//
+	// Example:
+	//
+	// OTLP_EXPORTER_HEADERS=api-key=key,other-config-value=value"
+	ExporterHeaders string `mapstructure:"OTLP_EXPORTER_HEADERS" envconfig:"OTLP_EXPORTER_HEADERS"`
+	//ENV: OTLP_EXPORTER_TLS_ENABLED
+	//
+	// ExporterTLSEnabled indicates whether to use SSL for the OTLP exporter
+	ExporterTLSEnabled bool `mapstructure:"OTLP_EXPORTER_TLS_ENABLED" envconfig:"OTLP_EXPORTER_TLS_ENABLED"`
 	//ENV: OTLP_EXPORTER_TIMEOUT
 	//
 	// ExporterTimeout specifies the timeout duration for the OTLP exporter
@@ -37,6 +40,18 @@ type OTLPConfigs struct {
 	//
 	// ExporterReconnectionPeriod specifies the period for reconnection attempts
 	ExporterReconnectionPeriod time.Duration `mapstructure:"OTLP_EXPORTER_RECONNECTION_PERIOD" envconfig:"OTLP_EXPORTER_RECONNECTION_PERIOD" default:"30s"`
+	//ENV: OTLP_EXPORTER_IDLE_TIMEOUT
+	//
+	// ExporterIdleTimeout specifies the idle timeout for the OTLP exporter
+	ExporterIdleTimeout time.Duration `mapstructure:"OTLP_EXPORTER_IDLE_TIMEOUT" envconfig:"OTLP_EXPORTER_IDLE_TIMEOUT" default:"30s"`
+	//ENV: OTLP_EXPORTER_KEEP_ALIVE_TIME
+	//
+	// ExporterKeepAlivePeriod specifies the keep-alive period for the OTLP exporter
+	ExporterKeepAliveTime time.Duration `mapstructure:"OTLP_EXPORTER_KEEP_ALIVE_TIME" envconfig:"OTLP_EXPORTER_KEEP_ALIVE_TIME" default:"30s"`
+	//ENV: OTLP_EXPORTER_KEEP_ALIVE_TIMEOUT
+	//
+	// ExporterKeepAliveTimeout specifies the keep-alive timeout for the OTLP exporter
+	ExporterKeepAliveTimeout time.Duration `mapstructure:"OTLP_EXPORTER_KEEP_ALIVE_TIMEOUT" envconfig:"OTLP_EXPORTER_KEEP_ALIVE_TIMEOUT" default:"10s"`
 	//ENV: OTLP_METRICS_EXPORTER_RATE_BASE
 	//
 	// MetricsExporterRateBase specifies the rate base for metrics exporter
