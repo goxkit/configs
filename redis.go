@@ -23,8 +23,8 @@ type RedisConfigs struct {
 	Db int `mapstructure:"REDIS_DB" envconfig:"REDIS_DB" default:"0"`
 	//ENV: REDIS_TLS_ENABLED
 	//
-	// TlsEnabled indicates whether to use TLS for the Redis connection
-	TlsEnabled bool `mapstructure:"REDIS_TLS_ENABLED" envconfig:"REDIS_TLS_ENABLED"`
+	// TLSEnabled indicates whether to use TLS for the Redis connection
+	TLSEnabled bool `mapstructure:"REDIS_TLS_ENABLED" envconfig:"REDIS_TLS_ENABLED"`
 	//ENV: REDIS_CLUSTER_ENABLED
 	//
 	// ClusterEnabled indicates whether Redis cluster mode is enabled
